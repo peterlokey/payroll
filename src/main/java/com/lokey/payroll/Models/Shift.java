@@ -1,9 +1,17 @@
 package com.lokey.payroll.Models;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 
+@Entity
 public class Shift {
+
+    @Id
+    @GeneratedValue
+    private int id;
 
     @NotNull
     private LocalDate shiftDate;
@@ -13,5 +21,6 @@ public class Shift {
 
    @NotNull
     private float totalTips;
+
 
 }
