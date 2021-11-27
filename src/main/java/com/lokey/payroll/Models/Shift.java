@@ -23,4 +23,39 @@ public class Shift {
     private float totalTips;
 
 
+   //getters and setters
+    public int getId() {
+        return id;
+    }
+
+    public LocalDate getShiftDate() {
+        return shiftDate;
+    }
+
+    public void setShiftDate(LocalDate shiftDate) {
+        this.shiftDate = shiftDate;
+    }
+
+    public float getTotalHoursWorked() {
+        return totalHoursWorked;
+    }
+
+    public void setTotalHoursWorked(float totalHoursWorked) {
+        this.totalHoursWorked = totalHoursWorked;
+    }
+
+    public float getTotalTips() {
+        return totalTips;
+    }
+
+    public void setTotalTips(float totalTips) {
+        this.totalTips = totalTips;
+    }
+
+    public Shift(int id, LocalDate shiftDate, float totalHoursWorked, float totalTips) {
+        this.id = id;
+        this.shiftDate = shiftDate;
+        this.totalHoursWorked = totalHoursWorked;
+        this.totalTips = totalTips;
+    }
 }
