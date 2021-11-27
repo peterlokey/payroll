@@ -1,12 +1,15 @@
-package com.lokey.payroll.Controllers;
+package com.lokey.payroll.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+
 @Controller
-public class TeammateController {
-    @RequestMapping(value = "newTeammate")
+public class HomeController {
+
+    @RequestMapping(value = "")
     public String index() {
-        return "newTeammate";
+        return "index";
     }
+
 }

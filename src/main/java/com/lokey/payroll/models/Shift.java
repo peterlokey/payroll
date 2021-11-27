@@ -1,4 +1,4 @@
-package com.lokey.payroll.Models;
+package com.lokey.payroll.models;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

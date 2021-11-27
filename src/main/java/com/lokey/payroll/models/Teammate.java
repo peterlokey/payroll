@@ -1,4 +1,4 @@
-package com.lokey.payroll.Models;
+package com.lokey.payroll.models;
 
 
 import javax.persistence.Entity;
@@ -25,7 +25,6 @@ public class Teammate {
     private float wage;
 
     private Position position;
-
     public enum Position {
         Foh, Boh
     }
@@ -78,7 +77,7 @@ public class Teammate {
         this.shifts = shifts;
     }
 
-
+    public Teammate() {}
     public Teammate(int id, String firstName, String lastName, float wage, Position position, ArrayList<Shift> shifts) {
         this.id = id;
         this.firstName = firstName;
