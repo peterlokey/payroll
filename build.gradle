@@ -8,8 +8,12 @@ group = 'com.lokey'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '11'
 
+apply plugin: 'idea'
+apply plugin: 'java'
+
 repositories {
 	mavenCentral()
+
 }
 
 dependencies {
@@ -21,6 +25,10 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-validation:2.5.6'
 	implementation('org.springframework.boot:spring-boot-starter-data-jpa:2.5.6')
 	implementation('mysql:mysql-connector-java:8.0.25')
+
+	implementation('com.squareup:square:17.0.0.20211117')
+	implementation('com.mashape.unirest:unirest-java:1.4.9')
+
 	developmentOnly 'org.springframework.boot:spring-boot-devtools:2.5.6'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test:2.5.6'
 
