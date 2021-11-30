@@ -26,7 +26,7 @@ public class SquareManager {
 
       SquareClient client = new SquareClient.Builder()
               .environment(Environment.SANDBOX)
-              .accessToken("EAAAELwyyuoMHnROn75Pz0IjbWSnEVy6cSFUSHtn2XbO7HPdowJ699GYHzoIbhw_")
+              .accessToken(KEY_WILL_GO_HERE)
               .build();
 
       LocationsApi api = client.getLocationsApi();
