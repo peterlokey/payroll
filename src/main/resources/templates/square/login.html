@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head">
+</head>
+<body>
+<!--<div th:replace="fragments :: page-header"></div>-->
+
+<div class="container body-content">
+    <h1>Connect to Square here</h1>
+    <br><br>
+    <form method="post" >
+        <div class="form-group">
+            <label for="key">Key</label>
+            <input id="key" name="key" th:value="${key}" />
+        </div>
+        <input type="submit" value="Connect" />
+    </form>
+
+</div>
+
+</body>
+</html>

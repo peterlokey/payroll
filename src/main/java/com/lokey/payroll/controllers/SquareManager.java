@@ -2,7 +2,6 @@ package com.lokey.payroll.controllers;
 
 import com.squareup.square.Environment;
 import com.squareup.square.SquareClient;
-import com.squareup.square.api.LaborApi;
 import com.squareup.square.api.LocationsApi;
 import com.squareup.square.exceptions.ApiException;
 import com.squareup.square.http.client.HttpContext;
@@ -12,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.io.IOException;
 import java.util.List;
@@ -20,13 +20,18 @@ import java.util.List;
 @RequestMapping(value = "square")
 public class SquareManager {
 
-   @RequestMapping(value = "connect", method = RequestMethod.GET)
-   public String connectToSquare (Model model) {
-      String text = "null";
+   @RequestMapping(value = "login", method = RequestMethod.GET)
+   public String connectToSquare (){
+      return "square/login";
+   }
 
+   @RequestMapping(value = "login", method = RequestMethod.POST)
+   public String connectToSquare (Model model, @RequestParam String key) {
+      String text = "null";
+      System.out.println("Key entered: " + key);
       SquareClient client = new SquareClient.Builder()
               .environment(Environment.SANDBOX)
-              .accessToken("EAAAELwyyuoMHnROn75Pz0IjbWSnEVy6cSFUSHtn2XbO7HPdowJ699GYHzoIbhw_")
+              .accessToken(key)
               .build();
 
       LocationsApi api = client.getLocationsApi();
@@ -55,14 +60,16 @@ public class SquareManager {
          e.printStackTrace();
       }
 
-      LaborApi laborApi = client.getLaborApi();
+      //LaborApi laborApi = client.getLaborApi();
+
+
 
       model.addAttribute("text", text);
-      return "squareConnect";
+      return "square/connect";
    }
 
 
-   //LaborApi laborApi = client.getLaborApi();
+
 
 
 
